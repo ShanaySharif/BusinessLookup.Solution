@@ -1,4 +1,4 @@
-using TravelAPI.Models;
+using BusinessAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
