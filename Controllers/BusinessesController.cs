@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
+// using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using BusinessAPI.Models;
 
@@ -11,7 +11,7 @@ using BusinessAPI.Models;
 namespace BusinessAPI.Controllers
 {
 
-    [Authorize]
+    // [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BusinessesController : ControllerBase
@@ -23,36 +23,60 @@ namespace BusinessAPI.Controllers
             _db = db;
         }
 
-        [HttpGet]
-        public async
-        Task<ActionResult<IEnumerable<Business>>> Get (int businessId, string ResturantName, string shopName, string review, int rating )
-        {
-            IQueryable<Business> query = _db.Businesses.AsQueryable();
+       [HttpGet]
+public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, string restaurantName, string shopName, string locationName, string review, int rating)
+{
+    IQueryable<Business> query = _db.Businesses.AsQueryable();
 
-            if (restaurantName != null)
-            {
-                query = query.Where(entry => entry.RestaurantName == restaurantName);
-            }
-             if (locationName != null)
+    if (restaurantName != null)
+    {
+        query = query.Where(entry => entry.RestaurantName == restaurantName);
+    }
 
-            {
-               query = query.Where(entry => entry.LocationName = locationName);
-             }
-             if (shopName != null)
-             {
-                query = query.Where(entry => entry.ShopName == shopName);
-             }
-             if (rating > 0)
-             {
-                query = query.Where(entry => entry.Rating == rating);
-             }
-             var businesses = await query.ToListAsync();
-             if (busineses.Count == 0)
-             {
-                return NotFound();
-             }
-             return Ok(businesses);
-        }
+    if (locationName != null)
+    {
+        query = query.Where(entry => entry.LocationName == locationName); 
+    }
+
+    if (shopName != null)
+    {
+        query = query.Where(entry => entry.ShopName == shopName);
+    }
+
+    if (rating > 0)
+    {
+        query = query.Where(entry => entry.Rating == rating);
+    }
+
+    var businesses = await query.ToListAsync();
+
+    if (businesses.Count == 0)
+    {
+        return NotFound();
+    }
+
+    return Ok(businesses);
+}
+[HttpPost]
+    public IActionResult Get()
+    {
+      List<Business> businesses = _db.Businesses.ToList();
+      return Ok(businesses);
+    }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Business>> GetBusiness(int id)
+    {
+      Business business = await _db.Businesses.FindAsync(id);
+
+      if (business == null)
+      {
+        return NotFound();
+      }
+
+      return business;
+    }
+ 
+
 
 
     }
