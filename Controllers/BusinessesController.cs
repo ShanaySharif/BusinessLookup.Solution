@@ -22,15 +22,16 @@ namespace BusinessAPI.Controllers
         {
             _db = db;
         }
+
         [HttpGet]
         public async
         Task<ActionResult<IEnumerable<Business>>> Get (int businessId, string ResturantName, string shopName, string review, int rating )
         {
             IQueryable<Business> query = _db.Businesses.AsQueryable();
 
-            if (resturantName != null)
+            if (restaurantName != null)
             {
-                query = query.Where(entry => entry.ResturantName == resturantName);
+                query = query.Where(entry => entry.RestaurantName == restaurantName);
             }
              if (locationName != null)
 

@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
 
-namespace BuisnessAPI.Models
+namespace BusinessAPI.Models
 {
-  public class BuisnessAPIContext : DbContext
+  public class BusinessAPIContext : DbContext
   {
     public DbSet<Business> Businesses { get; set; }
 
-    public BuisnessAPIContext(DbContextOptions<BuisnessAPIContext> options) : base(options)
+    public BusinessAPIContext(DbContextOptions<BusinessAPIContext> options) : base(options)
     {
     }
 
@@ -17,11 +17,11 @@ namespace BuisnessAPI.Models
         .HasData(
           new Business { BusinessId = 1, RestaurantName = "Fox in the Snow Cafe", LocationName = "New Albany", Review = "Best Cafe Art in town", Rating = 10}, 
 
-          new Business { BusinessId = 2, RestaurantName = "Kitchen Social", LocationName = "WesterVille", Review = "Amazing chicken and waffles", Rating = 9.5}, 
+          new Business { BusinessId = 2, RestaurantName = "Kitchen Social", LocationName = "WesterVille", Review = "Amazing chicken and waffles", Rating = 9}, 
 
-          new Business { BusinessId = 3, RestaurantName = "Kitchen Social", LocationName = "Dublin", Review = "Amazing chicken and waffles", Rating = 9.5}, 
+          new Business { BusinessId = 3, RestaurantName = "Kitchen Social", LocationName = "Dublin", Review = "Amazing chicken and waffles", Rating = 8}, 
 
-          new Business { BusinessId = 4, RestaurantName = "Zencha Cafe", LocationName = "High St", Review = "Masala Chai waffles were the lightest crispiest waffles ever chicken dumping looked ordinary but tasted heavenly", Rating = 8.9}, 
+          new Business { BusinessId = 4, RestaurantName = "Zencha Cafe", LocationName = "High St", Review = "Masala Chai waffles were the lightest crispiest waffles ever chicken dumping looked ordinary but tasted heavenly", Rating = 8}, 
 
 
           new Business { BusinessId = 5, RestaurantName = "Mozart's", LocationName = "Columbus", Review = "Authentic Tea Experience in Columbus", Rating = 3},
@@ -50,14 +50,7 @@ namespace BuisnessAPI.Models
            new Business { BusinessId = 14, ShopName = "Heritage Square Antique Mall", LocationName = "Channingway Center Dr", Review = "Large antique mall with many different sellers and reasonable pricing.", Rating = 7},
 
            new Business { BusinessId = 15, ShopName = "North Market Downtown", LocationName = "Grandview Ave,", Review = "Upscale market. Huge variety.", Rating = 5}
-
-
-
-
-
         );
-
-
 
     }
   }
