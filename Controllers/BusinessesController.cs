@@ -57,9 +57,7 @@ public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, strin
 
     return Ok(businesses);
 }
-
-//search
-[HttpPost] 
+[HttpPost("Search")] 
     public IActionResult Get()
     {
       List<Business> businesses = _db.Businesses.ToList();
@@ -77,8 +75,7 @@ public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, strin
 
       return business;
     }
-    //create
-    [HttpPost]
+    [HttpPost("Create")]
     public async Task<ActionResult<Business>> Post([FromBody] Business business)
     {
       _db.Businesses.Add(business);
