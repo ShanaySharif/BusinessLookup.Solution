@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-// using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using BusinessAPI.Models;
 
@@ -11,7 +11,7 @@ using BusinessAPI.Models;
 namespace BusinessAPI.Controllers
 {
 
-    // [Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BusinessesController : ControllerBase
