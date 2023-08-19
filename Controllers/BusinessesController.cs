@@ -57,7 +57,7 @@ public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, strin
 
     return Ok(businesses);
 }
-[HttpPost]
+[HttpPost("Search")]
     public IActionResult Get()
     {
       List<Business> businesses = _db.Businesses.ToList();
@@ -74,6 +74,13 @@ public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, strin
       }
 
       return business;
+    }
+    [HttpPost("Create")]
+    public async Task<ActionResult<Business>> Post([FromBody] Business business)
+    {
+      _db.Businesses.Add(business);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction(nameof(GetBusiness), new { id = business.BusinessId }, business);
     }
  
 
