@@ -1,9 +1,9 @@
 using BusinessAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+// using Microsoft.AspNetCore.Authorization;
+// using Microsoft.AspNetCore.Authentication.JwtBearer;
+// using Microsoft.IdentityModel.Tokens;
+// using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,7 +34,7 @@ else
   app.UseHttpsRedirection();
 }
 
-app.UseAuthentication();
+// app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
