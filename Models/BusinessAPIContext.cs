@@ -41,9 +41,6 @@ namespace BusinessAPI.Models
            
            new Business { BusinessId = 11, RestaurantName = "Your Restaurant Name", LocationName = "Kossuth St", Review = "Popular mall. Good selection of stores. Clean.", Rating = 8},
 
-
-
-
            new Business { BusinessId = 12, RestaurantName = "Lennox Town Center", LocationName = "Olenrangy River Rd", Review = "Nice shops, but the traffic and parking are awful.", Rating = 4},
 
            new Business { BusinessId = 13, RestaurantName = "Vernacular - Grandview", LocationName = "Grandview Ave", Review = "Fantastic assortment of unique pieces, and a friendly group of associates!", Rating = 6},
