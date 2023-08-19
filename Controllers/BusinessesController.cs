@@ -24,7 +24,7 @@ namespace BusinessAPI.Controllers
         }
 
        [HttpGet]
-public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, string restaurantName, string shopName, string locationName, string review, int rating)
+public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, string restaurantName, string locationName, string review, int rating)
 {
     IQueryable<Business> query = _db.Businesses.AsQueryable();
 
@@ -37,12 +37,6 @@ public async Task<ActionResult<IEnumerable<Business>>> Get(int businessId, strin
     {
         query = query.Where(entry => entry.LocationName == locationName); 
     }
-
-    if (shopName != null)
-    {
-        query = query.Where(entry => entry.ShopName == shopName);
-    }
-
     if (rating > 0)
     {
         query = query.Where(entry => entry.Rating == rating);
