@@ -34,9 +34,10 @@ Within appsettings.json, put in the following code. Make sure to replacing the u
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=Business_api;uid=root;pwd=epicodus;"
   }
-}
+
+
 Within appsettings.Development.json, add the following code:
-{
+``` {
   "Logging": {
     "LogLevel": {
       "Default": "Information",
@@ -46,6 +47,7 @@ Within appsettings.Development.json, add the following code:
     }
   }
 } 
+
 ```
 
 Create the database using the migrations in the BusinessApi Park API project. Open your shell (e.g., Terminal or GitBash) to the production directory "BusinessAPI", and run dotnet ef database update.
