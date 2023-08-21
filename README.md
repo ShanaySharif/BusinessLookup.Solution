@@ -32,7 +32,7 @@ Within appsettings.json, put in the following code. Make sure to replacing the u
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=cretaceous_api;uid=root;pwd=epicodus;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=Business_api;uid=root;pwd=epicodus;"
   }
 }
 Within appsettings.Development.json, add the following code:
