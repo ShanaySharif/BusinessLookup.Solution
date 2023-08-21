@@ -50,13 +50,15 @@ Within appsettings.Development.json, add the following code:
 
 ```
 
-Create the database using the migrations in the BusinessApi Park API project. Open your shell (e.g., Terminal or GitBash) to the production directory "BusinessAPI", and run dotnet ef database update.
-To optionally create a migration, run the command dotnet ef migrations add MigrationName where MigrationName is your custom name for the migration in UpperCamelCase. 
-Within the production directory "BusinessAPI", run dotnet watch run --launch-profile "BusinessAPI-Production" in the command line to start the project in production mode with a watcher.
-To optionally further build out this project in development mode, start the project with dotnet watch run in the production directory "BusinessAPI".
-Use your program of choice to make API calls. In your API calls, use the domain http://localhost:5000.
-Testing the API Endpoints
-You are welcome to test this API via Postman, curl, or the ASP.NET Core MVC.
+- Create the database using the migrations in the BusinessApi Park API project. 
+- Open your shell (e.g., Terminal or GitBash) to the production directory "BusinessAPI", and run dotnet ef database update.
+- To optionally create a migration, run the command dotnet ef migrations add MigrationName where MigrationName is your custom name for the migration in UpperCamelCase. 
+- Within the production directory "BusinessAPI", run dotnet watch run --launch-profile "BusinessAPI-Production" in the command line to start the project in production mode with a watcher.
+- To optionally further build out this project in development mode, start the project with dotnet watch run in the production directory "BusinessAPI".
+- Use your program of choice to make API calls. In your API calls, use the domain http://localhost:5000.
+
+## Testing the API Endpoints
+- You are welcome to test this API via Postman, curl, or the ASP.NET Core MVC.
 
 - Available Endpoints
 - GET http://localhost:5000/api/Businesses/
