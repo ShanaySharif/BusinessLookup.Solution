@@ -68,6 +68,38 @@ Within appsettings.Development.json, add the following code:
 - DELETE http://localhost:5000/api/Businesses/{id}
 Note: {id} is a variable and it should be replaced with the id number of the Business you want to GET, PUT, or DELETE.
 
+
+GET http://localhost:5000/api/businesses?rating=9
+- The following query will return all business with a rating of 9
+
+GET http://localhost:5000/api/businesses?locationName=columbus
+- The following query will return all businesses located in Columbus
+
+GET http://localhost:5000/api/businesses?restaurantName=Mozart's
+- The following query will return all the data relating to Mozart Restaurant.
+
+When making a POST request to http://localhost:5000/api/businesses/, you need to include a body. Here's an example body in JSON:
+
+``` "restaurantName": "Fox in the Snow Cafe",
+        "locationName": "New Albany",
+        "review": "Best Cafe Art in town",
+        "rating": 10
+```
+Additional Requirements for PUT Request
+- When making a PUT request to http://localhost:5000/api/animals/{id}, you need to include a body that includes the animal's animalId property. Here's an example body in JSON:
+
+```
+ "businessId": 4,
+    "restaurantName": "Zencha Cafe",
+    "locationName": "High St",
+    "review": "Masala Chai waffles were the lightest crispiest waffles ever chicken dumping looked ordinary but tasted heavenly",
+    "rating": 8
+```
+And here's the PUT request we would send the previous body to:
+
+http://localhost:5000/api/businesses/4
+Notice that the value of businessId needs to match the id number in the URL. In this example, they are both 4.
+
 ### Optional Query String Parameters for GET Request
 - GET requests to http://localhost:5000/api/Businesses/ can optionally include query strings to filter or search Businesses.
 
