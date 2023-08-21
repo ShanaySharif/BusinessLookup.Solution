@@ -69,4 +69,8 @@ Note: {id} is a variable and it should be replaced with the id number of the Bus
 ### Optional Query String Parameters for GET Request
 - GET requests to http://localhost:5000/api/Businesses/ can optionally include query strings to filter or search Businesses.
 
+## Known Bugs
+No known bugs 
+## MIT License
+Copyright (c) 2023 Shankaron Mohamed
 
