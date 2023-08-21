@@ -79,8 +79,9 @@ Within appsettings.Development.json, add the following code:
   "password": "string"
 }
 ```
-- type in the username and password you selected above.
-- it will generate a token you'll inorder to authenticate API
+- Type in the username and password you selected above.
+- It will generate a token order
+- Copy and past Token into API request of your choice.
 
 
 ### How to authenticate using a token. 
