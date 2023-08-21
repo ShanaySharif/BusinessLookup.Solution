@@ -57,8 +57,54 @@ Within appsettings.Development.json, add the following code:
 - To optionally further build out this project in development mode, start the project with dotnet watch run in the production directory "BusinessAPI".
 - Use your program of choice to make API calls. In your API calls, use the domain http://localhost:5000.
 
+## How to Obtain a Token:
+- to obtain a Token in Swagger UI, Navigate to the top of the page where it says Auth.
+- Under the Post action click the drop down Post/api/register button.
+- Right under Request Body, you'll see
+
+ ```{
+  "username": "string",
+  "password": "string"
+}
+```
+
+- where it says "string" type in a username and password of your choice.
+
+- Next, Navigate to the POST dropdown under POST
+​/api​/Auth​/register that says POST
+​/api​/Auth​/login.
+```
+ {
+  "username": "string",
+  "password": "string"
+}
+```
+- type in the username and password you selected above.
+- it will generate a token you'll inorder to authenticate API
+
+
+### How to authenticate using a token. 
+
+To authenticate a token in Postman, you can follow these general steps:
+
+- Create a Request:
+-Create a new request in Postman to the API endpoint you want to access.
+
+Select Authorization Type:
+-In the request tab, navigate to the "Authorization" tab.
+
+Choose Token-Based Authorization:
+-In the "Type" dropdown, select the appropriate token-based authorization type. This could be "Bearer Token" or something similar, depending on the API you're working with.
+
+Provide Token:
+-Once you've selected the authorization type, a field will appear where you can enter the token. This is usually a field called "Token" or "Bearer Token". Enter the token you've received from the authentication process.
+
+Send Request:
+- After adding the token, you can proceed to send the request. The token will be included in the request headers, which will authenticate your request with the API server.
+
+
 ## Testing the API Endpoints
-- You are welcome to test this API via Postman, curl, or the ASP.NET Core MVC.
+- You are welcome to test this API via Postman, Swagger UI, curl, or the ASP.NET Core MVC.
 
 - Available Endpoints
 - GET http://localhost:5000/api/Businesses/
@@ -102,6 +148,8 @@ Notice that the value of businessId needs to match the id number in the URL. In 
 
 ### Optional Query String Parameters for GET Request
 - GET requests to http://localhost:5000/api/Businesses/ can optionally include query strings to filter or search Businesses.
+
+
 
 ## Known Bugs
 No known bugs 
