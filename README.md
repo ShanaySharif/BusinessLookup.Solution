@@ -23,7 +23,7 @@
 - Open the terminal and navigate to this project's production directory called "BusinessLookup.Solution".
 Within the production directory "BusinessApi", create two new files: appsettings.json and appsettings.Development.json.
 Within appsettings.json, put in the following code. Make sure to replacing the uid and pwd values in the MySQL database connection string with your own username and password for MySQL.
-   {
+  ``` {
   "Logging": {
     "LogLevel": {
       "Default": "Information",
@@ -45,7 +45,7 @@ Within appsettings.Development.json, add the following code:
       "Microsoft.Hosting.Lifetime": "Information"
     }
   }
-} 
+} ```
 
 Create the database using the migrations in the BusinessApi Park API project. Open your shell (e.g., Terminal or GitBash) to the production directory "BusinessAPI", and run dotnet ef database update.
 To optionally create a migration, run the command dotnet ef migrations add MigrationName where MigrationName is your custom name for the migration in UpperCamelCase. 
