@@ -45,7 +45,8 @@ Within appsettings.Development.json, add the following code:
       "Microsoft.Hosting.Lifetime": "Information"
     }
   }
-} ```
+} 
+```
 
 Create the database using the migrations in the BusinessApi Park API project. Open your shell (e.g., Terminal or GitBash) to the production directory "BusinessAPI", and run dotnet ef database update.
 To optionally create a migration, run the command dotnet ef migrations add MigrationName where MigrationName is your custom name for the migration in UpperCamelCase. 
